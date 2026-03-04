@@ -1,0 +1,20 @@
+Browser
+  |
+  | (1) GET /dashboard
+  v
+Next.js Server (RSC)
+  |
+  | (2) Reads session server-side
+  | (3) Calls internal BFF: /app/api/report
+  v
+Route Handler (BFF)
+  |
+  | (4) Attach access token server-side
+  v
+Backend API
+  |
+  | (5) Return protected data
+  v
+Route Handler -> RSC -> Browser rendered HTML/stream
+
+Key point: browser does not directly call protected API with token.

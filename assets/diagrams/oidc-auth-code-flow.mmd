@@ -1,0 +1,19 @@
+sequenceDiagram
+  autonumber
+  participant U as User Browser
+  participant A as Next.js(Auth.js)
+  participant K as Keycloak
+  participant R as Resource API
+
+  U->>A: Request protected page
+  A-->>U: Redirect to Keycloak auth endpoint
+  U->>K: Login + consent
+  K-->>U: Redirect back with authorization code
+  U->>A: Send code callback
+  A->>K: Exchange code for tokens (server-side)
+  K-->>A: id_token + access_token
+  A-->>U: Session established (cookie)
+  U->>A: Request data page/API
+  A->>R: Call API with access_token (server-side)
+  R-->>A: Protected data
+  A-->>U: Rendered response

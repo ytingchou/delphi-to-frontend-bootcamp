@@ -1,0 +1,22 @@
+[Delphi Experience]
+       |
+       v
+[Web Foundation]
+       |
+       v
+[TypeScript + React]
+       |
+       v
+[Next.js 15 App Router]
+   /           \
+  v             v
+[RSC]         [BFF APIs]
+   \           /
+    v         v
+ [OIDC + Auth.js + Keycloak]
+             |
+             v
+ [Lint + Tests + PR Discipline]
+             |
+             v
+ [Production Maintenance Readiness]

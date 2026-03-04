@@ -1,0 +1,9 @@
+flowchart LR
+  A[Understand Task] --> B[Prompt Cline with constraints]
+  B --> C[Implement minimal solution]
+  C --> D[Run lint/tests]
+  D --> E[Human review checklist]
+  E --> F[Reprompt Cline for critique]
+  F --> G[Refine + document PR risks]
+  G --> H[Retrospective]
+  H --> A
