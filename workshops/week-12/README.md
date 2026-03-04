@@ -1,5 +1,12 @@
 # Workshop Week 12 - Operational Readiness Drill
 
+## 開始前先看
+
+- 開始步驟：[`workshops/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`workshops/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 10 分鐘 Start Checklist 再進入 Problem
+- 今日紀錄模板：[`work-session-log-template.md`](../../templates/learner-ops/work-session-log-template.md)
+
 ## Problem
 
 為現有 Next.js feature 補上 release checklist、環境變數清單、基本觀測與 incident 快速排查流程。

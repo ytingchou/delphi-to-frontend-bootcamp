@@ -1,5 +1,12 @@
 # Workshop Week 10 - RSC Boundary Implementation
 
+## 開始前先看
+
+- 開始步驟：[`workshops/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`workshops/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 10 分鐘 Start Checklist 再進入 Problem
+- 今日紀錄模板：[`work-session-log-template.md`](../../templates/learner-ops/work-session-log-template.md)
+
 ## Problem
 
 實作 dashboard：Server Component 抓資料，Client Component 負責互動；同時加入 streaming/loading。

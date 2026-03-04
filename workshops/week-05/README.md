@@ -1,5 +1,12 @@
 # Workshop Week 05 - JS to TS Migration Drill
 
+## 開始前先看
+
+- 開始步驟：[`workshops/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`workshops/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 10 分鐘 Start Checklist 再進入 Problem
+- 今日紀錄模板：[`work-session-log-template.md`](../../templates/learner-ops/work-session-log-template.md)
+
 ## Problem
 
 把一個既有 JS API 模組遷移到 TS，移除隱性型別風險，並補上 type guards。

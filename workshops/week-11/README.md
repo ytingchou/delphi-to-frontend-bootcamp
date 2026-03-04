@@ -1,5 +1,12 @@
 # Workshop Week 11 - BFF Route Handlers with DTO Mapping
 
+## 開始前先看
+
+- 開始步驟：[`workshops/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`workshops/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 10 分鐘 Start Checklist 再進入 Problem
+- 今日紀錄模板：[`work-session-log-template.md`](../../templates/learner-ops/work-session-log-template.md)
+
 ## Problem
 
 建立 `/api/bff/employees` 與 `/api/bff/reports`，統一後端回應格式並處理錯誤碼映射。

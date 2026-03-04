@@ -1,5 +1,12 @@
 # Workshop Week 14 - Auth.js + Keycloak Integration
 
+## 開始前先看
+
+- 開始步驟：[`workshops/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`workshops/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 10 分鐘 Start Checklist 再進入 Problem
+- 今日紀錄模板：[`work-session-log-template.md`](../../templates/learner-ops/work-session-log-template.md)
+
 ## Problem
 
 在 Next.js App Router 中整合 Auth.js(Keycloak provider)，實作登入、登出、受保護頁與 server-side session 取用。

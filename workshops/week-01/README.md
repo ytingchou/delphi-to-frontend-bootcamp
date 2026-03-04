@@ -1,5 +1,12 @@
 # Workshop Week 01 - Web Request Tracing Lab
 
+## 開始前先看
+
+- 開始步驟：[`workshops/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`workshops/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 10 分鐘 Start Checklist 再進入 Problem
+- 今日紀錄模板：[`work-session-log-template.md`](../../templates/learner-ops/work-session-log-template.md)
+
 ## Problem
 
 你接手一個「員工查詢頁」但 API 不穩。請建立最小靜態頁，並用 DevTools 追蹤 3 種失敗情境（404、500、timeout）。

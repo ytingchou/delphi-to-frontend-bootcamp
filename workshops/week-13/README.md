@@ -1,5 +1,12 @@
 # Workshop Week 13 - Keycloak OIDC Lab
 
+## 開始前先看
+
+- 開始步驟：[`workshops/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`workshops/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 10 分鐘 Start Checklist 再進入 Problem
+- 今日紀錄模板：[`work-session-log-template.md`](../../templates/learner-ops/work-session-log-template.md)
+
 ## Problem
 
 在本機 Docker 啟動 Keycloak，建立 realm/client/user/role，並實際驗證 Authorization Code Flow。

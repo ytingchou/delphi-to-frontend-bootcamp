@@ -1,5 +1,12 @@
 # Workshop Week 15 - Lint/Test Quality Gate Setup
 
+## 開始前先看
+
+- 開始步驟：[`workshops/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`workshops/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 10 分鐘 Start Checklist 再進入 Problem
+- 今日紀錄模板：[`work-session-log-template.md`](../../templates/learner-ops/work-session-log-template.md)
+
 ## Problem
 
 建立專案 ESLint + Jest 品質閘，確保核心功能（auth/bff/error paths）有可執行測試。
