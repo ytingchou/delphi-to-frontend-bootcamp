@@ -59,8 +59,12 @@ Learn concepts -> Workshop -> Assignment -> Cline review -> Fix & test -> Demo -
 3. Cline operating guide: `CLINE_PLAYBOOK.md`
 4. Calendar and milestone gates: `BOOTCAMP_CALENDAR.md`
 5. Auth/OIDC references: `references/README.md`
-6. Mentor operations guide: `MENTOR_OPERATIONS.md`
-7. Final project spec: `capstone/README.md`
+6. Workshop start guide: `workshops/START_HERE.md`
+7. Assignment start guide: `assignments/START_HERE.md`
+8. One-page learner SOP: `LEARNER_ONE_PAGE_SOP.md`
+9. Learner ops templates: `templates/learner-ops/`
+10. Mentor operations guide: `MENTOR_OPERATIONS.md`
+11. Final project spec: `capstone/README.md`
 
 ## Weekly Progression
 

@@ -2,6 +2,9 @@
 
 Each workshop is a guided hands-on lab with constraints and acceptance criteria.
 
+- Start guide: [START_HERE.md](START_HERE.md)
+- If stuck: see [卡關處理流程](START_HERE.md#troubleshooting-flow)
+
 - [Week 01](week-01/README.md)
 - [Week 02](week-02/README.md)
 - [Week 03](week-03/README.md)
