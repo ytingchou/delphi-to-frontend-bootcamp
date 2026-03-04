@@ -1,5 +1,12 @@
 # Assignment Week 05 - TypeScript Migration Pack
 
+## 開始前先看
+
+- 開始步驟：[`assignments/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`assignments/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 Start Checklist，再開始 Task
+- 今日站會模板：[`daily-standup-template.md`](../../templates/learner-ops/daily-standup-template.md)
+
 ## Task
 
 把一個小型 JS feature（API + formatter + UI mapping）完整遷移到 TypeScript。

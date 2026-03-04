@@ -1,5 +1,12 @@
 # Assignment Week 16 - Capstone Final Delivery
 
+## 開始前先看
+
+- 開始步驟：[`assignments/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`assignments/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 Start Checklist，再開始 Task
+- 今日站會模板：[`daily-standup-template.md`](../../templates/learner-ops/daily-standup-template.md)
+
 ## Task
 
 完成企業後台 capstone，具備交付等級品質：功能、測試、安全、可維運與文檔。

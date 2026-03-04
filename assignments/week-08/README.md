@@ -1,5 +1,12 @@
 # Assignment Week 08 - Testable React Form Module
 
+## 開始前先看
+
+- 開始步驟：[`assignments/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`assignments/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 Start Checklist，再開始 Task
+- 今日站會模板：[`daily-standup-template.md`](../../templates/learner-ops/daily-standup-template.md)
+
 ## Task
 
 完成一個可測試的員工建立表單模組，含驗證規則、提交邏輯與錯誤處理。

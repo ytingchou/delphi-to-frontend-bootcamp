@@ -1,5 +1,12 @@
 # Assignment Week 12 - Delivery Runbook
 
+## 開始前先看
+
+- 開始步驟：[`assignments/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`assignments/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 Start Checklist，再開始 Task
+- 今日站會模板：[`daily-standup-template.md`](../../templates/learner-ops/daily-standup-template.md)
+
 ## Task
 
 為目前專案撰寫可執行的 delivery runbook，涵蓋環境設定、上線流程、異常排查、回滾策略。

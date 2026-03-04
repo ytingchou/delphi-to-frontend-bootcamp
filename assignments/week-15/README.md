@@ -1,5 +1,12 @@
 # Assignment Week 15 - Quality Gate Portfolio
 
+## 開始前先看
+
+- 開始步驟：[`assignments/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`assignments/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 Start Checklist，再開始 Task
+- 今日站會模板：[`daily-standup-template.md`](../../templates/learner-ops/daily-standup-template.md)
+
 ## Task
 
 為專案建立 lint/test 品質門檻，並提交一份測試策略報告（含缺口與後續計畫）。

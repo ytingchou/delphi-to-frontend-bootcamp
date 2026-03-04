@@ -1,5 +1,12 @@
 # Assignment Week 03 - Tailwind Responsive Feature Panel
 
+## 開始前先看
+
+- 開始步驟：[`assignments/START_HERE.md`](../START_HERE.md#start-checklist)
+- 卡關處理：[`assignments/START_HERE.md`](../START_HERE.md#troubleshooting-flow)
+- 建議先完成 Start Checklist，再開始 Task
+- 今日站會模板：[`daily-standup-template.md`](../../templates/learner-ops/daily-standup-template.md)
+
 ## Task
 
 用 Tailwind 製作企業後台的「搜尋 + 篩選 + 結果列表」頁，支援手機與桌面。
