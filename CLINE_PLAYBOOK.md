@@ -4,6 +4,13 @@
 
 Use Cline to speed up learning and delivery while keeping human engineering judgment in control.
 
+## Start Guides
+
+- Workshop quick start: `workshops/START_HERE.md`
+- Assignment quick start: `assignments/START_HERE.md`
+- One-page quick SOP: `LEARNER_ONE_PAGE_SOP.md`
+- Learner ops templates: `templates/learner-ops/`
+
 ## Golden Rules
 
 - Ask Cline for plans and options first, not immediate final code.
