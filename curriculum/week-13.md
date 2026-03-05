@@ -1,36 +1,127 @@
-# Week 13 - OIDC/OAuth2 與 Authorization Code Flow
+# Week 13 - OIDC/OAuth2 與 Authorization Code Flow（Chapter 13）
 
-## 本週目標
+## 章節導讀
 
-- 理解 OAuth2 與 OIDC 的角色與差異。
-- 完整掌握 Authorization Code Flow（含 token exchange）。
-- 在本機 Docker 啟動 Keycloak 並建立 realm/client/user/role。
+這一章是認證授權基礎課。先理解協定，Week 14 才能穩定落地 Auth.js + Keycloak。
 
-## 對 Delphi 工程師的重要性
+你會學到：
+1. OAuth2 與 OIDC 差異。
+2. Authorization Code Flow 每一步在做什麼。
+3. Keycloak 本機最小可用設定。
 
-認證授權是企業專案核心。只會套件設定不夠，必須理解 protocol 才能在故障時快速排查。
+## 0 基礎詞彙
 
-## 知識模組
+- `OAuth2`: 授權框架。
+- `OIDC`: 在 OAuth2 上增加身份層（ID Token）。
+- `Authorization Code Flow`: 前端跳轉登入，server 交換 token 的流程。
+- `Issuer`: 身份提供者識別 URL。
 
-1. OAuth2 roles（Resource Owner/Client/Auth Server/Resource Server）
-2. OIDC tokens（ID token vs Access token）
-3. Authorization Code Flow steps
-4. 常見錯誤（redirect URI mismatch、invalid_client、clock skew）
-
-## 圖表（ASCII）
+## 協定流程圖（ASCII）
 
 ```text
-Browser -> Auth server(login) -> callback(code)
--> App server exchanges code -> tokens -> session
+1) Browser -> Keycloak /authorize
+2) User login
+3) Keycloak -> redirect_uri?code=...
+4) App server -> Keycloak /token (code exchange)
+5) App server gets tokens and creates session
+6) Browser uses session cookie to access app
 ```
 
-## 建議節奏（20+ 小時）
+## 核心知識（像書一樣讀）
 
-- Day 1: protocol theory (4h)
-- Day 2: Keycloak setup (4h)
-- Day 3: flow tracing with logs/network (4h)
-- Day 4: Workshop (5h)
-- Day 5: Assignment + threat notes (4h)
+### 1. OAuth2 與 OIDC 的關係
+
+- OAuth2 解決「你可不可以存取資源」。
+- OIDC 解決「你是誰」。
+
+### 2. 為什麼要 Authorization Code + Server Exchange
+
+把 token 交換留在 server，可降低 token 暴露風險。
+
+### 3. 常見故障點
+
+1. `redirect_uri_mismatch`
+2. `invalid_client`
+3. 時鐘偏差導致 token 驗證失敗
+
+## Code-Along（逐步照做）
+
+### Step 0 - 啟動 Keycloak
+
+```bash
+docker compose -f references/examples/keycloak-docker-compose.yml up -d
+```
+
+等待啟動後，開 `http://localhost:8080`。
+
+### Step 1 - 建立最小 realm/client
+
+在 Keycloak 管理後台建立：
+1. Realm: `bootcamp`
+2. Client: `nextjs-app`
+3. Client type: `confidential`
+4. Valid redirect URIs: `http://localhost:3000/api/auth/callback/keycloak`
+
+### Step 2 - 驗證 discovery endpoint
+
+```bash
+curl http://localhost:8080/realms/bootcamp/.well-known/openid-configuration
+```
+
+驗收：
+1. 回傳 JSON。
+2. 包含 `authorization_endpoint`、`token_endpoint`、`issuer`。
+
+### Step 3 - 手動畫出你的 flow
+
+建立 `notes/week-13-oidc-flow.md`，至少包含：
+1. Browser 何時跳轉。
+2. Server 何時交換 code。
+3. Session 何時建立。
+
+### Step 4 - 故障演練
+
+故意把 redirect URI 改錯，觀察錯誤訊息並記錄排查順序。
+
+## Token 圖（ASCII）
+
+```text
+ID Token     -> 說明使用者身份（給 Client）
+Access Token -> 存取 API（給 Resource Server）
+Refresh Token-> 換新 Access Token
+```
+
+## 常見錯誤與排查
+
+1. issuer 設錯：
+- 現象：驗證失敗。
+- 修正：用 discovery endpoint 核對。
+
+2. redirect URI 未白名單：
+- 現象：登入後被拒。
+- 修正：Keycloak client 設定補齊。
+
+3. client secret 錯：
+- 現象：token exchange 失敗。
+- 修正：重新核對 confidential client secret。
+
+## 本週 5 天節奏（章節閱讀 + 實作）
+
+- Day 1: 讀核心知識 + 完成 Step 0。
+- Day 2: 完成 Step 1（realm/client）。
+- Day 3: 完成 Step 2~4（discovery + 故障演練）。
+- Day 4: 完成 [Workshop week-13](../workshops/week-13/README.md)。
+- Day 5: 完成 [Assignment week-13](../assignments/week-13/README.md)。
+
+## Cline 協作模板
+
+```text
+請你把 OIDC Authorization Code Flow 用 8 步驟解釋給我，
+每一步都要包含：
+- 誰發請求
+- 請求到哪裡
+- 回應帶什麼
+```
 
 ## 本週實作
 
@@ -38,18 +129,33 @@ Browser -> Auth server(login) -> callback(code)
 - Assignment: [week-13](../assignments/week-13/README.md)
 - Rubric: [week-13](../rubrics/week-13.md)
 
-## Cline 必做
-
-- 讓 Cline 畫出 flow step-by-step（文字或 mermaid）。
-- 要求 Cline 列舉 5 個 OIDC 故障場景與排查順序。
-- 人工比對 Cline 與 RFC/官方文件是否一致。
-
 ## 完成定義
 
-- 能獨立啟動 Keycloak 並建立可用 client。
-- 能解釋每一個 token 的用途與風險。
+- 能獨立啟動 Keycloak 並完成 realm/client 基礎設定。
+- 能正確解釋 Authorization Code Flow 每一步。
 
-## 參考資料
+
+## 章節練習（不看答案先做）
+
+1. 請畫出 Authorization Code Flow 6 步驟，並標註 request/response。
+2. 請完成 Keycloak realm/client 最小設定並驗證 discovery endpoint。
+3. 請故意製造 `redirect_uri_mismatch` 並寫排查順序。
+
+## 提示（卡住再看）
+
+1. 先核對 issuer 與 discovery endpoint。
+2. callback URL 需完全匹配白名單。
+3. 設定先檢查，再查程式與 token claim。
+
+## 交付證據清單（提交前自查）
+
+建議模板：[chapter-evidence-template](../templates/learner-ops/chapter-evidence-template.md)
+
+- discovery endpoint 回應證據。
+- `notes/week-13-oidc-flow.md`。
+- 至少一個故障演練記錄。
+
+## 延伸閱讀（遇到進階需求再看）
 
 - OAuth2 RFC 6749: <https://www.rfc-editor.org/rfc/rfc6749>
 - OIDC Core: <https://openid.net/specs/openid-connect-core-1_0-18.html>

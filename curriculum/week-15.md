@@ -1,35 +1,159 @@
-# Week 15 - ESLint + Jest + CI 品質閘
+# Week 15 - ESLint + Jest + CI 品質閘（Chapter 15）
 
-## 本週目標
+## 章節導讀
 
-- 建立 ESLint 規範與自動化檢查。
-- 使用 Jest/Testing Library 為關鍵邏輯補齊測試。
-- 形成 CI-ready 的交付品質門檻。
+這一章會把「可跑」變成「可放心合併」。
 
-## 對 Delphi 工程師的重要性
+你會學到：
+1. ESLint 規則如何保護團隊一致性。
+2. Jest 測試如何覆蓋關鍵邏輯與錯誤路徑。
+3. CI 品質閘如何定義 block merge 條件。
 
-你即將進入真實交付，品質閘是壓力下維持穩定的保險。這週要把「會寫功能」提升成「可放心 merge」。
+## 0 基礎詞彙
 
-## 知識模組
+- `Lint`: 靜態規範檢查。
+- `Unit test`: 單元測試。
+- `Integration test`: 整合測試。
+- `Quality gate`: 合併前必過條件。
 
-1. ESLint config and rule rationale
-2. Jest basics and test strategy pyramid
-3. Testing RSC-adjacent logic via isolation
-4. CI signal quality（快、準、可行動）
-
-## 圖表（ASCII）
+## 品質流圖（ASCII）
 
 ```text
-Code -> lint -> unit test -> integration test -> PR review -> merge
+Code
+  -> lint
+  -> unit tests
+  -> integration tests
+  -> PR review
+  -> merge
 ```
 
-## 建議節奏（20+ 小時）
+## 核心知識（像書一樣讀）
 
-- Day 1: lint rule tuning (4h)
-- Day 2: unit test writing (4h)
-- Day 3: integration scenario tests (4h)
-- Day 4: Workshop (5h)
-- Day 5: Assignment + CI notes (4h)
+### 1. 規範是團隊協作工具
+
+ESLint 不是為了挑語法，而是避免常見維護雷區。
+
+### 2. 測試先保護高風險邏輯
+
+優先測：
+1. auth 判斷。
+2. BFF mapper。
+3. 錯誤處理分支。
+
+### 3. CI 要快、準、可行動
+
+失敗訊號必須能讓人快速知道：哪裡壞、怎麼修。
+
+## Code-Along（逐步照做）
+
+### Step 0 - 安裝測試與 lint 依賴
+
+在 `playground/week-09-next-app`：
+
+```bash
+npm i -D jest @types/jest ts-jest @testing-library/react @testing-library/jest-dom eslint
+```
+
+### Step 1 - 建立一個可測函式
+
+建立 `src/lib/mapper.ts`：
+
+```ts
+export type UpstreamOrder = { order_id: string; amount_cents: number };
+export type OrderDto = { id: string; amount: number };
+
+export function mapOrder(input: UpstreamOrder): OrderDto {
+  return {
+    id: input.order_id,
+    amount: input.amount_cents / 100,
+  };
+}
+```
+
+### Step 2 - 寫 Jest 測試
+
+建立 `src/lib/mapper.test.ts`：
+
+```ts
+import { mapOrder } from "./mapper";
+
+describe("mapOrder", () => {
+  it("maps cents to amount", () => {
+    const result = mapOrder({ order_id: "o-1", amount_cents: 2599 });
+    expect(result).toEqual({ id: "o-1", amount: 25.99 });
+  });
+
+  it("handles zero amount", () => {
+    const result = mapOrder({ order_id: "o-2", amount_cents: 0 });
+    expect(result.amount).toBe(0);
+  });
+});
+```
+
+### Step 3 - 補上 lint/test scripts
+
+在 `package.json` scripts 加上：
+
+```json
+{
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --runInBand"
+  }
+}
+```
+
+### Step 4 - 驗收
+
+```bash
+npm run lint
+npm run test
+```
+
+驗收標準：
+1. lint 無 error。
+2. test 綠燈。
+3. 你至少覆蓋 1 個錯誤或邊界案例。
+
+## 測試策略圖（ASCII）
+
+```text
+Most tests -> pure logic unit tests
+Some tests -> integration tests
+Few tests  -> full e2e critical paths
+```
+
+## 常見錯誤與排查
+
+1. 只測 happy path：
+- 風險：真實錯誤時崩潰。
+- 修正：至少加 1 個 error/edge case。
+
+2. 過度 mock：
+- 風險：測試綠燈但真實壞掉。
+- 修正：只 mock 必要邊界。
+
+3. lint 規則太多一次導入：
+- 風險：團隊停擺。
+- 修正：先定 blocker 規則。
+
+## 本週 5 天節奏（章節閱讀 + 實作）
+
+- Day 1: 讀核心知識 + 完成 Step 0。
+- Day 2: 完成 Step 1~2（函式 + 測試）。
+- Day 3: 完成 Step 3~4（腳本 + 驗收）。
+- Day 4: 完成 [Workshop week-15](../workshops/week-15/README.md)。
+- Day 5: 完成 [Assignment week-15](../assignments/week-15/README.md)。
+
+## Cline 協作模板
+
+```text
+請 review 我的測試覆蓋。
+請回答：
+1) 哪些關鍵路徑沒測到
+2) 哪些測試過度依賴 mock
+3) 你建議先補哪 3 個測試
+```
 
 ## 本週實作
 
@@ -37,18 +161,33 @@ Code -> lint -> unit test -> integration test -> PR review -> merge
 - Assignment: [week-15](../assignments/week-15/README.md)
 - Rubric: [week-15](../rubrics/week-15.md)
 
-## Cline 必做
-
-- 讓 Cline 審查 test cases 是否只測 happy path。
-- 要求 Cline 提供 flakiness 風險與修正策略。
-- 人工評估 Cline 建議是否過度 mock。
-
 ## 完成定義
 
-- 能建立 lint/test 腳本並通過。
-- 能為 auth/BFF/error path 寫出有價值測試。
+- 能建立 lint/test 品質閘。
+- 能為 auth/BFF/error path 補足高價值測試。
 
-## 參考資料
+
+## 章節練習（不看答案先做）
+
+1. 請為 mapper/validator 補至少 2 個單元測試。
+2. 請補 1 個錯誤路徑測試（非 happy path）。
+3. 請定義品質閘：哪些 lint/test 失敗要阻擋 merge。
+
+## 提示（卡住再看）
+
+1. 先測純函式，最容易穩定。
+2. 每個關鍵模組至少一個 edge case。
+3. CI 規則先少而準，再逐步加嚴。
+
+## 交付證據清單（提交前自查）
+
+建議模板：[chapter-evidence-template](../templates/learner-ops/chapter-evidence-template.md)
+
+- `npm run lint` 綠燈。
+- `npm run test` 綠燈。
+- 一份 quality gate 說明文件。
+
+## 延伸閱讀（遇到進階需求再看）
 
 - ESLint docs: <https://eslint.org/docs/latest/use/getting-started>
 - Jest docs: <https://jestjs.io/docs/getting-started>
