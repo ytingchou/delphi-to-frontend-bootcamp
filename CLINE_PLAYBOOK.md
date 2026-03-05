@@ -34,6 +34,7 @@ Use these templates:
 
 - `templates/cline-prompts/workshop-execution.md`
 - `templates/cline-prompts/assignment-coach.md`
+- `templates/cline-prompts/chapter-exercise-review.md`
 - `templates/cline-prompts/pr-review.md`
 - `templates/cline-prompts/learning-retrospective.md`
 
@@ -66,3 +67,7 @@ Always apply:
 - Accepted/rejected suggestions with reasons
 - Bugs found after Cline suggestion
 - Final improvements and lessons learned
+
+Suggested evidence template:
+
+- `templates/learner-ops/chapter-evidence-template.md`

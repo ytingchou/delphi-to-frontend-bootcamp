@@ -21,7 +21,8 @@ A 16-week, production-grade bootcamp for a senior Delphi engineer (frontend base
 - Weekly effort: **20+ hours**
 - Language: **Traditional Chinese + English terms**
 - Every week includes:
-  - 1 curriculum module (`curriculum/week-XX.md`)
+  - 1 chapter-style curriculum module (`curriculum/week-XX.md`)
+  - each chapter includes zero-baseline fundamentals, diagrams, step-by-step code-along, expected outcomes, troubleshooting, chapter exercises, and delivery evidence checklist
   - 1 workshop (`workshops/week-XX/README.md`)
   - 1 assignment (`assignments/week-XX/README.md`)
   - 1 rubric (`rubrics/week-XX.md`)
@@ -55,16 +56,17 @@ Learn concepts -> Workshop -> Assignment -> Cline review -> Fix & test -> Demo -
 ## Start Here
 
 1. Program overview: `README.md`
-2. Weekly map: `curriculum/README.md`
-3. Cline operating guide: `CLINE_PLAYBOOK.md`
-4. Calendar and milestone gates: `BOOTCAMP_CALENDAR.md`
-5. Auth/OIDC references: `references/README.md`
-6. Workshop start guide: `workshops/START_HERE.md`
-7. Assignment start guide: `assignments/START_HERE.md`
-8. One-page learner SOP: `LEARNER_ONE_PAGE_SOP.md`
-9. Learner ops templates: `templates/learner-ops/`
-10. Mentor operations guide: `MENTOR_OPERATIONS.md`
-11. Final project spec: `capstone/README.md`
+2. Self-learning onboarding: `curriculum/week-00.md`
+3. Weekly map: `curriculum/README.md`
+4. Cline operating guide: `CLINE_PLAYBOOK.md`
+5. Calendar and milestone gates: `BOOTCAMP_CALENDAR.md`
+6. Auth/OIDC references: `references/README.md`
+7. Workshop start guide: `workshops/START_HERE.md`
+8. Assignment start guide: `assignments/START_HERE.md`
+9. One-page learner SOP: `LEARNER_ONE_PAGE_SOP.md`
+10. Learner ops templates: `templates/learner-ops/`
+11. Mentor operations guide: `MENTOR_OPERATIONS.md`
+12. Final project spec: `capstone/README.md`
 
 ## Weekly Progression
 
