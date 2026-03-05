@@ -198,8 +198,17 @@ const [todos, setTodos] = useState<Todo[]>(() => {
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 把可推導資料也存成 state，導致不一致。
-- Right: 保持單一真實來源，effect 只做外部同步。
+- Wrong: 直接 mutate state 陣列。
+- Right: 使用不可變更新。
+
+```tsx
+// Wrong
+todos.push(newTodo);
+setTodos(todos);
+
+// Right
+setTodos((prev) => [...prev, newTodo]);
+```
 
 ## 章節練習（不看答案先做）
 

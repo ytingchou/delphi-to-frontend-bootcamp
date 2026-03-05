@@ -200,8 +200,18 @@ form?.addEventListener("submit", (event) => {
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 只放 placeholder 當欄位名稱。
-- Right: 每個 input 都有 `label for`，錯誤訊息用 `aria-describedby` 關聯。
+- Wrong: 用 placeholder 當欄位標籤。
+- Right: 使用 `label for` 與欄位語意關聯。
+
+```html
+<!-- Wrong -->
+<input id="email" placeholder="Email" />
+
+<!-- Right -->
+<label for="email">Email</label>
+<input id="email" type="email" aria-describedby="email-help" />
+<p id="email-help">請輸入公司信箱</p>
+```
 
 ## 章節練習（不看答案先做）
 

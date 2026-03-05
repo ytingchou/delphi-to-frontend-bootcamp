@@ -180,8 +180,25 @@ npx tsc --noEmit
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 用 `any` 快速通過型別。
-- Right: 外部資料用 `unknown`，透過 type guard 收斂後再使用。
+- Wrong: 直接用 `any` 略過檢查。
+- Right: 使用 `unknown` + type guard 做收斂。
+
+```ts
+// Wrong
+function parseUser(input: any) {
+  return input.email.toLowerCase();
+}
+
+// Right
+type User = { email: string };
+function isUser(input: unknown): input is User {
+  return typeof input === "object" && input !== null && "email" in input;
+}
+function parseUser(input: unknown) {
+  if (!isUser(input)) throw new Error("Invalid user");
+  return input.email.toLowerCase();
+}
+```
 
 ## 章節練習（不看答案先做）
 

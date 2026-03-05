@@ -184,8 +184,25 @@ curl -i http://localhost:3001/not-exists
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: API 失敗只看 Console，不看 Network。
-- Right: 先看 status code、request payload、response body，再回頭看程式。
+- Wrong: API 失敗只看 Console，不看 HTTP 狀態與回應。
+- Right: 先看 `response.ok/status`，再做錯誤分支與證據紀錄。
+
+```ts
+// Wrong
+const res = await fetch("/api/health");
+const data = await res.json();
+render(data);
+
+// Right
+const res = await fetch("/api/health");
+if (!res.ok) {
+  console.error("HTTP failed", res.status);
+  showError(`Request failed: ${res.status}`);
+  return;
+}
+const data = await res.json();
+render(data);
+```
 
 ## 章節練習（不看答案先做）
 

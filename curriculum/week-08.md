@@ -219,8 +219,20 @@ Input event
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: UI 元件直接呼叫 API 並夾雜商業規則。
-- Right: UI/Hooks/Services 分層，流程與資料轉換集中管理。
+- Wrong: UI 元件直接呼叫 API 並混商業規則。
+- Right: UI 只觸發 hook，API 在 service 層。
+
+```tsx
+// Wrong (inside component)
+async function onSubmit() {
+  const res = await fetch("/api/profile", { method: "POST" });
+  if (!res.ok) setError("Save failed");
+}
+
+// Right
+// component -> useProfileForm.submit()
+// useProfileForm -> profileService.saveProfile()
+```
 
 ## 章節練習（不看答案先做）
 

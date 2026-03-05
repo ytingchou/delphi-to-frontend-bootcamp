@@ -170,8 +170,22 @@ class="rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-200"
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 所有版面問題都用一種工具硬解（全 Flex 或全 Grid）。
-- Right: 一維排版用 Flex，二維區塊用 Grid，先 mobile 再加斷點。
+- Wrong: 二維卡片區硬用 Flex，後續難維護。
+- Right: 二維區塊用 Grid，一維導覽用 Flex。
+
+```html
+<!-- Wrong -->
+<div class="flex flex-wrap gap-4">
+  <article class="w-[48%]">Card A</article>
+  <article class="w-[48%]">Card B</article>
+</div>
+
+<!-- Right -->
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+  <article>Card A</article>
+  <article>Card B</article>
+</div>
+```
 
 ## 章節練習（不看答案先做）
 

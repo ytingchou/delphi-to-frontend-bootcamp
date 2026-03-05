@@ -172,8 +172,21 @@ B. 使用 DTO + mapper + ApiResult
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 前端直接依賴 upstream payload 欄位。
-- Right: 經過 mapper 轉成穩定 DTO，成功與失敗都用契約型別。
+- Wrong: UI 直接依賴 upstream 欄位。
+- Right: 經過 DTO mapper 隔離變動。
+
+```ts
+// Wrong
+const name = payload.display_name;
+
+// Right
+type UserDto = { name: string };
+function mapUser(payload: { display_name: string }): UserDto {
+  return { name: payload.display_name };
+}
+const dto = mapUser(payload);
+const name = dto.name;
+```
 
 ## 章節練習（不看答案先做）
 

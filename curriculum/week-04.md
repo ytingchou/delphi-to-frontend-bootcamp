@@ -200,8 +200,28 @@ const response = await withTimeout(fetch("https://jsonplaceholder.typicode.com/t
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 只寫成功路徑，失敗時 UI 沒反應。
-- Right: 一律做 `loading/success/error` 三態，並保留錯誤證據。
+- Wrong: 只寫成功路徑，失敗時 UI 無狀態。
+- Right: 建立 `loading/success/error` 三態。
+
+```js
+// Wrong
+const res = await fetch(url);
+const data = await res.json();
+setData(data);
+
+// Right
+setStatus("loading");
+try {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json();
+  setData(data);
+  setStatus("success");
+} catch (e) {
+  setStatus("error");
+  setError(String(e));
+}
+```
 
 ## 章節練習（不看答案先做）
 
