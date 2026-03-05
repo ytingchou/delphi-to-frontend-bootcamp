@@ -181,8 +181,23 @@ Alert
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 把秘密值放在 `NEXT_PUBLIC_*`。
-- Right: secrets 只在 server 使用，並加上 env 檢查與可行動 log。
+- Wrong: 把秘密值放 `NEXT_PUBLIC_*`。
+- Right: secret 僅 server 讀取並驗證存在。
+
+```env
+# Wrong
+NEXT_PUBLIC_KEYCLOAK_CLIENT_SECRET=super-secret
+
+# Right
+KEYCLOAK_CLIENT_SECRET=super-secret
+```
+
+```ts
+// Right runtime guard
+if (!process.env.KEYCLOAK_CLIENT_SECRET) {
+  throw new Error("Missing KEYCLOAK_CLIENT_SECRET");
+}
+```
 
 ## 章節練習（不看答案先做）
 

@@ -187,8 +187,18 @@ async function getOrders(): Promise<OrderDto[]> {
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: BFF 只是 passthrough，不做映射與錯誤契約。
-- Right: BFF 負責驗證、DTO 映射、錯誤標準化與安全邊界。
+- Wrong: BFF 直接原封不動回 upstream payload。
+- Right: BFF 做 DTO 映射與錯誤標準化。
+
+```ts
+// Wrong
+return NextResponse.json(await upstream.json());
+
+// Right
+const upstream = await upstreamRes.json();
+const dto = upstream.map(mapOrder);
+return NextResponse.json({ ok: true, data: dto });
+```
 
 ## 章節練習（不看答案先做）
 

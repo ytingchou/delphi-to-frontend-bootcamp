@@ -214,8 +214,21 @@ API 401?
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: Browser 直接帶 Bearer token 呼叫上游 API。
-- Right: 透過 Next.js server-side BFF 轉發 token，前端只接 DTO。
+- Wrong: Browser 直接帶 access token 打上游 API。
+- Right: Route Handler server-side 讀 session/token 再轉發。
+
+```ts
+// Wrong (browser)
+fetch("https://api.example.com/profile", {
+  headers: { Authorization: `Bearer ${token}` },
+});
+
+// Right (server route handler)
+const session = await auth();
+const res = await fetch("https://api.example.com/profile", {
+  headers: { Authorization: `Bearer ${session?.accessToken}` },
+});
+```
 
 ## 章節練習（不看答案先做）
 

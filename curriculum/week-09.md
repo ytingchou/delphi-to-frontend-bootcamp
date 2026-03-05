@@ -171,8 +171,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 沒有 route tree 就直接建立檔案。
-- Right: 先定 URL 與檔案責任，再建立 `layout/page/loading/error`。
+- Wrong: 沒 route tree 就直接亂建檔。
+- Right: 先定檔案責任再實作。
+
+```text
+Wrong: app/dashboard.tsx (混用舊習慣)
+
+Right:
+app/(admin)/dashboard/page.tsx
+app/(admin)/dashboard/loading.tsx
+app/(admin)/dashboard/error.tsx
+```
 
 ## 章節練習（不看答案先做）
 

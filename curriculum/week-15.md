@@ -171,8 +171,23 @@ Few tests  -> full e2e critical paths
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 測試只覆蓋 happy path。
-- Right: 關鍵模組至少包含 happy + error + edge 三類案例。
+- Wrong: 測試只驗 happy path。
+- Right: 同時覆蓋錯誤與邊界案例。
+
+```ts
+// Wrong
+it("maps order", () => {
+  expect(mapOrder({ order_id: "o1", amount_cents: 100 })).toEqual({ id: "o1", amount: 1 });
+});
+
+// Right
+it("maps order", () => {
+  expect(mapOrder({ order_id: "o1", amount_cents: 100 })).toEqual({ id: "o1", amount: 1 });
+});
+it("handles zero amount", () => {
+  expect(mapOrder({ order_id: "o2", amount_cents: 0 }).amount).toBe(0);
+});
+```
 
 ## 章節練習（不看答案先做）
 

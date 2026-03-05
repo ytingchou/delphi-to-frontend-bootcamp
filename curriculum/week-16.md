@@ -151,8 +151,21 @@ Demo score = Functionality + Security + Test evidence + Operability
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: scope 持續膨脹，最後功能與文件都不完整。
-- Right: 先 freeze must-have，每天依驗收條件收斂與交付證據。
+- Wrong: scope 持續擴大，交付不完整。
+- Right: 先 freeze must-have，再逐日驗收。
+
+```md
+# Wrong
+- Add feature A
+- Add feature B
+- Add feature C
+(沒有驗收條件)
+
+# Right
+- Must-have A: 已可演示 + 有測試
+- Must-have B: 已可演示 + 有回滾方案
+- Nice-to-have C: 延後
+```
 
 ## 章節練習（不看答案先做）
 

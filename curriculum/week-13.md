@@ -139,8 +139,17 @@ Refresh Token-> 換新 Access Token
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 只靠記憶設定 OIDC 參數。
-- Right: 先核對 discovery endpoint 與 redirect URI，再做程式整合。
+- Wrong: 只憑印象填 issuer/endpoint。
+- Right: 先查 discovery endpoint 再設定。
+
+```bash
+# Right
+curl http://localhost:8080/realms/bootcamp/.well-known/openid-configuration
+```
+
+```text
+Use returned issuer/authorization_endpoint/token_endpoint as source of truth.
+```
 
 ## 章節練習（不看答案先做）
 

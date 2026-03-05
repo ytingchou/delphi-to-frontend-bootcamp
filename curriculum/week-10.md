@@ -191,8 +191,20 @@ Too much use client
 
 ## 常見錯誤示例（Wrong vs Right）
 
-- Wrong: 為了省事把整頁都標 `use client`。
-- Right: 預設 server-first，只把互動最小區塊切成 client island。
+- Wrong: 整頁加 `use client`。
+- Right: 只有互動按鈕是 client island。
+
+```tsx
+// Wrong
+"use client";
+export default function DashboardPage() {
+  // fetch + layout + interaction all in client
+}
+
+// Right
+// page.tsx (Server Component) does data fetch
+// RefreshButton.tsx (Client Component) handles click/refresh
+```
 
 ## 章節練習（不看答案先做）
 
