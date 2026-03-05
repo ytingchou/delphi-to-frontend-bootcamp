@@ -27,6 +27,8 @@ Code
   -> merge
 ```
 
+Mermaid source: [week-15-quality-gate.mmd](../assets/diagrams/week-15-quality-gate.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 規範是團隊協作工具
@@ -166,6 +168,11 @@ Few tests  -> full e2e critical paths
 - 能建立 lint/test 品質閘。
 - 能為 auth/BFF/error path 補足高價值測試。
 
+
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 測試只覆蓋 happy path。
+- Right: 關鍵模組至少包含 happy + error + edge 三類案例。
 
 ## 章節練習（不看答案先做）
 

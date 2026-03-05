@@ -30,6 +30,8 @@ app/
       error.tsx
 ```
 
+Mermaid source: [week-09-app-router.mmd](../assets/diagrams/week-09-app-router.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 先規劃 route tree，再寫檔案
@@ -166,6 +168,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 - 能建立多層 layout + loading/error 的 App Router 架構。
 - 能清楚解釋檔案慣例與責任邊界。
 
+
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 沒有 route tree 就直接建立檔案。
+- Right: 先定 URL 與檔案責任，再建立 `layout/page/loading/error`。
 
 ## 章節練習（不看答案先做）
 

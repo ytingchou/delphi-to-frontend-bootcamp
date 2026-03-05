@@ -1,0 +1,6 @@
+flowchart LR
+  A[Request] --> B[Server Component fetch]
+  B --> C[Streamed HTML]
+  C --> D[Browser paint]
+  D --> E[Client islands hydrate]
+  E --> F[User interaction]

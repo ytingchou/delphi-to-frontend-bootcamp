@@ -1,0 +1,7 @@
+flowchart LR
+  U[Browser UI] --> BFF[/api/bff/orders]
+  BFF --> V[Validate input]
+  V --> UP[Upstream API]
+  UP --> M[Map to DTO]
+  M --> R[Stable response]
+  R --> U

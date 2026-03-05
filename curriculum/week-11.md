@@ -28,6 +28,8 @@ Browser UI
   -> return stable response
 ```
 
+Mermaid source: [week-11-bff-flow.mmd](../assets/diagrams/week-11-bff-flow.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. BFF 的真正價值
@@ -182,6 +184,11 @@ async function getOrders(): Promise<OrderDto[]> {
 - 能實作至少兩個 BFF endpoint 並維持穩定契約。
 - 能完整描述 BFF 對維護性與安全性的價值。
 
+
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: BFF 只是 passthrough，不做映射與錯誤契約。
+- Right: BFF 負責驗證、DTO 映射、錯誤標準化與安全邊界。
 
 ## 章節練習（不看答案先做）
 

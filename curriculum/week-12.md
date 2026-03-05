@@ -27,6 +27,8 @@ Code change
   -> rollback (if needed)
 ```
 
+Mermaid source: [week-12-release-loop.mmd](../assets/diagrams/week-12-release-loop.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 設定錯誤比程式錯誤更常見
@@ -176,6 +178,11 @@ Alert
 - 能提供可用 config/logging/release runbook。
 - 能對事故做初步 triage 與 rollback 判斷。
 
+
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 把秘密值放在 `NEXT_PUBLIC_*`。
+- Right: secrets 只在 server 使用，並加上 env 檢查與可行動 log。
 
 ## 章節練習（不看答案先做）
 

@@ -32,6 +32,8 @@ Browser (cookie only)
   -> Browser receives DTO only
 ```
 
+Mermaid source: [week-14-authjs-keycloak-bff.mmd](../assets/diagrams/week-14-authjs-keycloak-bff.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 為什麼 token 要留在 server side
@@ -209,6 +211,11 @@ API 401?
 - 能透過 server-side route handler 呼叫受保護 API。
 - 能解釋此設計如何降低 CORS 與 token 暴露風險。
 
+
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: Browser 直接帶 Bearer token 呼叫上游 API。
+- Right: 透過 Next.js server-side BFF 轉發 token，前端只接 DTO。
 
 ## 章節練習（不看答案先做）
 

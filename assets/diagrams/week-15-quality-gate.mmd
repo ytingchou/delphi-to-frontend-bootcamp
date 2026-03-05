@@ -1,0 +1,8 @@
+flowchart LR
+  C[Code] --> E[ESLint]
+  E --> J[Jest]
+  J --> PR[PR Review]
+  PR --> M[Merge]
+  E -->|fail| Fix[Fix]
+  J -->|fail| Fix
+  Fix --> E

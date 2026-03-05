@@ -27,6 +27,8 @@
 6) Browser uses session cookie to access app
 ```
 
+Mermaid source: [week-13-oidc-auth-code.mmd](../assets/diagrams/week-13-oidc-auth-code.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. OAuth2 與 OIDC 的關係
@@ -134,6 +136,11 @@ Refresh Token-> 換新 Access Token
 - 能獨立啟動 Keycloak 並完成 realm/client 基礎設定。
 - 能正確解釋 Authorization Code Flow 每一步。
 
+
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 只靠記憶設定 OIDC 參數。
+- Right: 先核對 discovery endpoint 與 redirect URI，再做程式整合。
 
 ## 章節練習（不看答案先做）
 

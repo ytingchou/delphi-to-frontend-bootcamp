@@ -31,6 +31,8 @@ Ops
   -> runbook + rollback plan
 ```
 
+Mermaid source: [week-16-capstone-delivery.mmd](../assets/diagrams/week-16-capstone-delivery.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 交付不是功能堆疊
@@ -146,6 +148,11 @@ Demo score = Functionality + Security + Test evidence + Operability
 - 能進行 20 分鐘技術 demo + 10 分鐘問答。
 - 能交付完整 handover 文件，讓團隊可接手。
 
+
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: scope 持續膨脹，最後功能與文件都不完整。
+- Right: 先 freeze must-have，每天依驗收條件收斂與交付證據。
 
 ## 章節練習（不看答案先做）
 

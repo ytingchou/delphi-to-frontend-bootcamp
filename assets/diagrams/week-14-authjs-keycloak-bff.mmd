@@ -1,0 +1,8 @@
+flowchart LR
+  B[Browser cookie] --> N[Next.js Auth.js]
+  N --> K[Keycloak]
+  B --> RH[/api/bff/profile]
+  RH --> S[Read session token server-side]
+  S --> API[Backend API]
+  API --> DTO[Normalize DTO]
+  DTO --> B

@@ -1,0 +1,7 @@
+flowchart LR
+  C[Code change] --> L[Lint/Test/Build]
+  L --> R[Review]
+  R --> D[Deploy]
+  D --> M[Monitor]
+  M -->|incident| RB[Rollback]
+  M -->|healthy| N[Next release]

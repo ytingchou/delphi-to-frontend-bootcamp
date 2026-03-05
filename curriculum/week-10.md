@@ -28,6 +28,8 @@ Request
   -> Client islands hydrate for interaction
 ```
 
+Mermaid source: [week-10-rsc-boundary.mmd](../assets/diagrams/week-10-rsc-boundary.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 先預設 server-first
@@ -186,6 +188,11 @@ Too much use client
 - 能交付一頁含 RSC + client island 的 dashboard。
 - 能說明邊界決策與安全原因。
 
+
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 為了省事把整頁都標 `use client`。
+- Right: 預設 server-first，只把互動最小區塊切成 client island。
 
 ## 章節練習（不看答案先做）
 

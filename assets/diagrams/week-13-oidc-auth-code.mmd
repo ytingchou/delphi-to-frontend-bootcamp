@@ -1,0 +1,12 @@
+sequenceDiagram
+  participant Browser
+  participant Keycloak
+  participant AppServer
+  Browser->>Keycloak: /authorize
+  Keycloak-->>Browser: login page
+  Browser->>Keycloak: credentials
+  Keycloak-->>Browser: redirect with code
+  Browser->>AppServer: callback?code=...
+  AppServer->>Keycloak: token exchange
+  Keycloak-->>AppServer: id/access/refresh token
+  AppServer-->>Browser: session cookie
