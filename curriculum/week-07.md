@@ -196,6 +196,11 @@ const [todos, setTodos] = useState<Todo[]>(() => {
 - 能解釋每個 effect 的存在理由。
 
 
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 把可推導資料也存成 state，導致不一致。
+- Right: 保持單一真實來源，effect 只做外部同步。
+
 ## 章節練習（不看答案先做）
 
 1. 請畫出你的 state 表（欄位、修改者、觸發事件）。

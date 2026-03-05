@@ -198,6 +198,11 @@ const response = await withTimeout(fetch("https://jsonplaceholder.typicode.com/t
 - 能針對 async 問題提交可重現且有證據的 bug report。
 
 
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 只寫成功路徑，失敗時 UI 沒反應。
+- Right: 一律做 `loading/success/error` 三態，並保留錯誤證據。
+
 ## 章節練習（不看答案先做）
 
 1. 請手推一段 event loop 範例輸出順序並解釋原因。

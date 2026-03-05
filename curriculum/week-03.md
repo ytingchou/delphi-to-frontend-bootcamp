@@ -168,6 +168,11 @@ class="rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-200"
 - 能說明你每個 breakpoint 的設計理由。
 
 
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 所有版面問題都用一種工具硬解（全 Flex 或全 Grid）。
+- Right: 一維排版用 Flex，二維區塊用 Grid，先 mobile 再加斷點。
+
 ## 章節練習（不看答案先做）
 
 1. 請做一個 dashboard（手機單欄、桌機多欄）並標註哪些區塊用 Flex、哪些用 Grid。

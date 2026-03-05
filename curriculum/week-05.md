@@ -178,6 +178,11 @@ npx tsc --noEmit
 - 能用 union + narrowing 保護錯誤路徑。
 
 
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 用 `any` 快速通過型別。
+- Right: 外部資料用 `unknown`，透過 type guard 收斂後再使用。
+
 ## 章節練習（不看答案先做）
 
 1. 請把一段 `any` 代碼改成 `unknown + type guard`。

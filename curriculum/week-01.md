@@ -182,6 +182,11 @@ curl -i http://localhost:3001/not-exists
 - 能提交至少一份含證據的 bug report。
 
 
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: API 失敗只看 Console，不看 Network。
+- Right: 先看 status code、request payload、response body，再回頭看程式。
+
 ## 章節練習（不看答案先做）
 
 1. 請用自己的話畫出 `Browser -> Next.js -> BFF/API -> DB -> Browser` 流程，並說明每層責任。

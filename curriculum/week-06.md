@@ -170,6 +170,11 @@ B. 使用 DTO + mapper + ApiResult
 - 能用 DTO 映射隔離上游變動。
 
 
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 前端直接依賴 upstream payload 欄位。
+- Right: 經過 mapper 轉成穩定 DTO，成功與失敗都用契約型別。
+
 ## 章節練習（不看答案先做）
 
 1. 請建立 `ApiResult<T>` 並套用至少兩種資料模型。

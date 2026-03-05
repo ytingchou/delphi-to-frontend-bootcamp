@@ -217,6 +217,11 @@ Input event
 - 能用清楚文件說明你的分層決策。
 
 
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: UI 元件直接呼叫 API 並夾雜商業規則。
+- Right: UI/Hooks/Services 分層，流程與資料轉換集中管理。
+
 ## 章節練習（不看答案先做）
 
 1. 請把一個表單功能拆成 `components/hooks/services/types`。

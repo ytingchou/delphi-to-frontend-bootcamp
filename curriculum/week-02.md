@@ -198,6 +198,11 @@ form?.addEventListener("submit", (event) => {
 - 能說明至少 5 個常見 a11y 反模式與修正方式。
 
 
+## 常見錯誤示例（Wrong vs Right）
+
+- Wrong: 只放 placeholder 當欄位名稱。
+- Right: 每個 input 都有 `label for`，錯誤訊息用 `aria-describedby` 關聯。
+
 ## 章節練習（不看答案先做）
 
 1. 請把一頁僅用 `div` 的表單重構成語意化結構（`header/main/section/form`）。
