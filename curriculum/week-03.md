@@ -27,6 +27,8 @@ Responsive
   -> md/lg overrides
 ```
 
+Mermaid source: [week-03-layout-decision.mmd](../assets/diagrams/week-03-layout-decision.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 先選佈局工具，再寫 class

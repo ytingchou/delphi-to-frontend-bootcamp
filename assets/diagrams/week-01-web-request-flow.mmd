@@ -1,0 +1,6 @@
+flowchart LR
+  U[User Action] --> B[Browser]
+  B --> N[Next.js Server]
+  N --> X[BFF/API]
+  X --> D[(Database)]
+  D --> X --> N --> B

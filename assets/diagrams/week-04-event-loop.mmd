@@ -1,0 +1,7 @@
+flowchart LR
+  CS[Call Stack] --> WA[Web APIs]
+  WA --> MQ[Microtask Queue]
+  WA --> TQ[Task Queue]
+  MQ --> EL[Event Loop]
+  TQ --> EL
+  EL --> CS

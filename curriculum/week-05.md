@@ -25,6 +25,8 @@ External data (unknown)
   -> safe business logic
 ```
 
+Mermaid source: [week-05-ts-narrowing-flow.mmd](../assets/diagrams/week-05-ts-narrowing-flow.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. TS 的價值不是「語法比較麻煩」

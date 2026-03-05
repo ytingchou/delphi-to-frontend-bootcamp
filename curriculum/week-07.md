@@ -26,6 +26,8 @@ State change
   -> setState
 ```
 
+Mermaid source: [week-07-react-state-loop.mmd](../assets/diagrams/week-07-react-state-loop.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 先設計 state，再寫 JSX

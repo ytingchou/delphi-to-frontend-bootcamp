@@ -25,6 +25,8 @@ UI Components
    <-> Types (DTO/contracts)
 ```
 
+Mermaid source: [week-08-feature-layering.mmd](../assets/diagrams/week-08-feature-layering.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 分層不是為了漂亮，是為了改得動

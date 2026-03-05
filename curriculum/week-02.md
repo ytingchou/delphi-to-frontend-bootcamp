@@ -27,6 +27,8 @@ Semantic structure
   -> better maintainability
 ```
 
+Mermaid source: [week-02-semantic-a11y-flow.mmd](../assets/diagrams/week-02-semantic-a11y-flow.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 語意化標籤是結構，不是樣式

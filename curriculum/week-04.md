@@ -31,6 +31,8 @@ Task Queue / Microtask Queue
 Event Loop pushes callback back to Call Stack
 ```
 
+Mermaid source: [week-04-event-loop.mmd](../assets/diagrams/week-04-event-loop.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 先理解順序，再寫程式

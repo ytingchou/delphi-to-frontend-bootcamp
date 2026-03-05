@@ -25,6 +25,8 @@ Backend payload
   -> UI props
 ```
 
+Mermaid source: [week-06-dto-contract-flow.mmd](../assets/diagrams/week-06-dto-contract-flow.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. 先有契約，再有畫面

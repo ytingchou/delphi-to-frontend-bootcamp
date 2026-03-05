@@ -32,6 +32,8 @@ User click
   -> Browser renders UI
 ```
 
+Mermaid source: [week-01-web-request-flow.mmd](../assets/diagrams/week-01-web-request-flow.mmd)
+
 ## 核心知識（像書一樣讀）
 
 ### 1. Browser 不只是「顯示畫面」
