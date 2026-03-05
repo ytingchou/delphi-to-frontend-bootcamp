@@ -101,8 +101,9 @@ Each week uses the same dimensions (weights vary by week):
 ## Diagrams
 
 - ASCII diagrams in lesson files for guaranteed compatibility.
-- Mermaid source is available in `assets/diagrams/` where useful.
+- Mermaid source is available for week 01-16 in `assets/diagrams/`.
 - Diagram files:
+  - `assets/diagrams/README.md`
   - `assets/diagrams/learning-journey.txt`
   - `assets/diagrams/rsc-bff-auth-flow.txt`
   - `assets/diagrams/oidc-auth-code-flow.mmd`
